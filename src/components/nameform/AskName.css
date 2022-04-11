@@ -1,0 +1,30 @@
+h1 {
+
+  color: var(--default-color);
+  font-family: cursive;
+}
+.name_input,
+.focus_input {
+  background: transparent;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 5px solid var(--default-color);
+  margin: 2rem 0rem;
+  padding: 1rem 5rem;
+  font-size: 3rem;
+  color: var(--default-color);
+  text-align: center;
+}
+.name_input:focus,
+.focus_input:focus {
+  outline: none;
+  border-bottom: 5px solid var(--default-color);
+}
+.continue_btn {
+  background-color: var(--default-color);
+  padding: 1rem 3rem;
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+}

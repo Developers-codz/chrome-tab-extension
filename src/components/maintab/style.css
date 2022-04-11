@@ -1,0 +1,29 @@
+.setting_wrapper,
+.setting_btn {
+  position: absolute;
+  cursor: pointer;
+}
+.setting_wrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.setting_btn {
+  padding: 0.5rem 1rem;
+  bottom: 50px;
+  left: 50px;
+}
+.focus_text_wrapper > input {
+  height: 1.2rem;
+  background: transparent;
+  width: 1.2rem;
+  margin: 0.2rem 1rem 0 0;
+}
+.focus_text_wrapper > label {
+  margin-right: 1rem;
+}
+.todo_wrapper {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}

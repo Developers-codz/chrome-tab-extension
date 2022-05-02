@@ -5,6 +5,8 @@
 }
 :root {
   --default-color: white;
+  --color-primary: #ff8a8a5d;
+  --dark: black;
 }
 body,
 .App {
@@ -14,12 +16,13 @@ body,
   color: var(--default-color);
 }
 body {
-  background: url(https://source.unsplash.com/random/nature) #d1d1d1;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://source.unsplash.com/random/?nature,mountain,tree,city,ocean) #d1d1d1;
   width: 100vw;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  
 }
 .App {
   flex-direction: column;
@@ -41,4 +44,7 @@ body {
 }
 .font-xs {
   font-size: 1.5rem;
+}
+.font-xxs{
+  font-size:1rem;
 }

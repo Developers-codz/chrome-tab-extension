@@ -16,7 +16,7 @@ export const AskName = () => {
   };
   return (
     <>
-      <h1>Hello, Whats your name ?</h1>
+      <h1>Hello, What's your name ?</h1>
       <input className="name_input" onChange={(e) => changeHandler(e)} />
       {toShow && (
         <button className="continue_btn" onClick={clickHandler}>

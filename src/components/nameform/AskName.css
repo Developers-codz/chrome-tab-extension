@@ -1,5 +1,4 @@
 h1 {
-
   color: var(--default-color);
   font-family: cursive;
 }
@@ -17,7 +16,8 @@ h1 {
   text-align: center;
 }
 .name_input:focus,
-.focus_input:focus {
+.focus_input:focus,
+.todo_input:focus {
   outline: none;
   border-bottom: 5px solid var(--default-color);
 }

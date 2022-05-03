@@ -10,6 +10,9 @@
   color: var(--dark);
   border-radius: 2rem;
 }
+.template-wrapper{
+  height: 15rem;
+}
 
 .todo-task-wrapper{
  overflow-y: scroll;

@@ -11,41 +11,41 @@ export const Weather = () => {
     pressure: null,
   });
   const [weatherDetailOpen, setOpen] = useState(false);
-  // useEffect(() => {
-  //   function getLocation() {
-  //     if (navigator.geolocation) {
-  //       navigator.geolocation.watchPosition(setPosition);
-  //     } else {
-  //       console.log("Geolocation is not supported by this browser.");
-  //     }
-  //   }
+  useEffect(() => {
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(setPosition);
+      } else {
+        console.log("Geolocation is not supported by this browser.");
+      }
+    }
 
-  //   function setPosition(position) {
-  //     setLoaction((loc) => ({
-  //       ...loc,
-  //       latitude: position.coords.latitude,
-  //       longitude: position.coords.longitude,
-  //     }));
-  //   }
-  //   getLocation();
+    function setPosition(position) {
+      setLoaction((loc) => ({
+        ...loc,
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      }));
+    }
+    getLocation();
 
-  //   fetch(
-  //     `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=b8f865aec3438529607574e15033f34b`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setTemp((temp) => ({
-  //         ...temp,
-  //         currTemp: data.main.temp,
-  //         icon: data.weather[0].icon,
-  //         desc: data.weather[0].description,
-  //         feels: data.main.feels_like,
-  //         pressure: data.main.pressure,
-  //         city: data.name,
-  //       }));
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, [location]);
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=b8f865aec3438529607574e15033f34b`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setTemp((temp) => ({
+          ...temp,
+          currTemp: data.main.temp,
+          icon: data.weather[0].icon,
+          desc: data.weather[0].description,
+          feels: data.main.feels_like,
+          pressure: data.main.pressure,
+          city: data.name,
+        }));
+      })
+      .catch((err) => console.log(err));
+  }, [location]);
 
   return (
     <>

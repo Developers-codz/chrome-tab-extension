@@ -11,44 +11,47 @@ export const TodoList = ({ setOpen }) => {
   const [todo,setTodo] = useState("")
 
   
-  // const inputHandler = () => {
-  //   // if (e.keyCode === 13) {
-  //     console.log("triggred")
-  //     todoDispatch({ type: "SET_TODO_ITEM", payload: todo });
-  //     // e.target.value = "";
-  //     // localStorage.setItem("todo", JSON.stringify(todoState));
-  //   // }
-  // };
+  const inputHandler = (e) => {
+    if (e.keyCode === 13) {
+      console.log("triggred")
+      todoDispatch({ type: "SET_TODO_ITEM", payload: e.target.value });
+      e.target.value = "";
+      localStorage.setItem("todo", JSON.stringify(todoState));
+    }
+  };
+  useEffect(() => {
+    let todo = JSON.parse(localStorage.getItem("todo"));
+    if (todo !== null) todoDispatch({ type: "SET_TODO", payload: todo });
+  }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem("todo", JSON.stringify(todoState));
-  // }, [todoState]);
+  useEffect(() => {
+    localStorage.setItem("todo", JSON.stringify(todoState));
+  }, [todoState]);
   return (
     <>
       <div className="todo-container">
         {todoAddOpen
-        //  || todoState.length > 0
+         || todoState.length > 0
           ? (
           <>
             <div className="todo-task-wrapper">
               <ul>
-                {/* {todoState.map((item,i) => (
+                {todoState.map((item,i) => (
                   <Todo item={item}  key={i}/>
-                ))} */}
-                {console.log(todoState)}
+                ))}
               </ul>
             </div>
             <div className="todo-input-wrapper">
               <input
                 className="todo_input"
                 placeholder="Add to do now"
-                onChange={(e)=>setTodo(e.target.value)}
+                onKeyUp={(e)=>inputHandler(e)}
               />
-              <button onClick={()=>todoDispatch({ type: "SET_TODO_ITEM", payload: todo })}>Add</button>
+              
             </div>
           </>
         ) : (
-          <div className="centered vertical-direction ">
+          <div className="centered vertical-direction template-wrapper">
             <p className="font-sm mb-lg">No todo yet? </p>
             <button className="continue_btn" onClick={() => setTodoOpen((flag)=>!flag)}>
               Add now {">"}

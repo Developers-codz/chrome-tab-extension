@@ -1,13 +1,22 @@
 import { useTodo } from "../../context/todo-context";
 import "./todo.css";
 const Todo = ({ item }) => {
-  console.log(item)
-  const { todoDispatch } = useTodo();
+  const { todoDispatch} = useTodo();
   return (
-    <li className="decor-none font-xxs padding-sm todo-lists">
+    <li className="decor-none font-xs padding-sm todo-lists">
       <div>
-        <input type="checkbox" name="todo" id={item.todo} />
-        <label htmlFor={item.todo}>{item.todo}</label>
+        <input
+          type="checkbox"
+          name="todo"
+          checked={item.completed}
+          id={item.todo}
+          
+        />
+        <label htmlFor={item.todo}>{item.completed ? <strike onClick={() =>
+            todoDispatch({ type: "TOGGLE_STATUS_FALSE", payload: item.id})
+          }>{item.todo}</strike>:<span onClick={() =>
+            todoDispatch({ type: "TOGGLE_STATUS_TRUE", payload: item.id})
+          }>{item.todo}</span>}</label>
       </div>
       <span
         className="remove-btn reset"

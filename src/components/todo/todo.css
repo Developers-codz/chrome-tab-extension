@@ -13,6 +13,9 @@
 .template-wrapper{
   height: 15rem;
 }
+.todo-head{
+  padding:1rem 0 0 1.5rem
+}
 
 .todo-task-wrapper{
  overflow-y: scroll;

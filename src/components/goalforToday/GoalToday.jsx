@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import {Edit, Delete } from "../../assets/icons";
+
 export const GoalToday = ({isOpen,setOpen}) => {
     const [focusText, setFocusText] = useState({ text: "", status: false });
 

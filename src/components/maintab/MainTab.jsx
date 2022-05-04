@@ -60,7 +60,7 @@ console.log("parent called")
       <div className="todo_wrapper">
         <p
           className="font-sm todo_btn_wrapper"
-          onClick={() => setOpen((isOpen) => ({ ...isOpen, todo: true }))}
+          onClick={() => setOpen((isOpen) => ({ ...isOpen, todo: !isOpen.todo }))}
           >
           Todo
         </p>

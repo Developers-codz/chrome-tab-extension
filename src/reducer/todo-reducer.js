@@ -14,5 +14,15 @@ export const todoReducer = (state, action) => {
     case "REMOVE_TODO" : {
       return state.filter((todo)=> todo.id !== action.payload)
     }
+    case "TOGGLE_STATUS_FALSE": {
+      const task =  state.find((todo) => todo.id === action.payload)
+      task.completed = false
+         return [...state]
+    }
+    case "TOGGLE_STATUS_TRUE": {
+      const task =  state.find((todo) => todo.id === action.payload)
+      task.completed = true
+         return [...state]
+    }
   }
 };

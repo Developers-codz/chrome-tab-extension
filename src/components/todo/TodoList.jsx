@@ -8,7 +8,6 @@ import Todo from "./Todo";
 export const TodoList = ({ setOpen }) => {
   const [todoAddOpen, setTodoOpen] = useState(false);
   const { todoDispatch, todoState } = useTodo();
-  const [todo,setTodo] = useState("")
 
   
   const inputHandler = (e) => {
@@ -34,6 +33,7 @@ export const TodoList = ({ setOpen }) => {
          || todoState.length > 0
           ? (
           <>
+          <h2 className="todo-head">Today</h2>
             <div className="todo-task-wrapper">
               <ul>
                 {todoState.map((item,i) => (

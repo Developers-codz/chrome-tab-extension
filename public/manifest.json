@@ -1,9 +1,0 @@
-
-
-{
-    "manifest_version" : 3,
-    "version":"1.0",
-    "name":"awesome",
-    "description":"Okay",
-   "chrome_url_overrides" : {"new_tab":"index.html"}
-}

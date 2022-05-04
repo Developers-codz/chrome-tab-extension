@@ -1,51 +1,52 @@
-import { useState,useEffect } from "react";
-import {Edit, Delete } from "../../assets/icons";
+import { useState, useEffect } from "react";
+import { Edit, Delete } from "../../assets/icons";
 
-export const GoalToday = ({isOpen,setOpen}) => {
-    const [focusText, setFocusText] = useState({ text: "", status: false });
+export const GoalToday = ({ isOpen, setOpen }) => {
+  const [focusText, setFocusText] = useState({ text: "", status: false });
 
-    useEffect(() => {
-        if (JSON.parse(localStorage.getItem("focus")) !== null) {
-          const { focus, focusState } = JSON.parse(localStorage.getItem("focus"));
-          setFocusText((focusText) => ({
-            ...focusText,
-            text: focus,
-            status: focusState,
-          }));
-       
-        }
-      }, []);
-      useEffect(()=>{
-           localStorage.setItem("focus",JSON.stringify({focus:focusText.text,focusState:focusText.status}))
-      },[focusText.status])
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("focus")) !== null) {
+      const { focus, focusState } = JSON.parse(localStorage.getItem("focus"));
+      setFocusText((focusText) => ({
+        ...focusText,
+        text: focus,
+        status: focusState,
+      }));
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem(
+      "focus",
+      JSON.stringify({ focus: focusText.text, focusState: focusText.status })
+    );
+  }, [focusText.status]);
 
-    const focusTextHandler = (e) => {
-        if (e.key === "Enter") {
-          console.log("I pressed")
-          localStorage.setItem(
-            "focus",
-            JSON.stringify({ focus: e.target.value, focusState: false })
-          );
-          setOpen((open) => ({ ...open, focusForm: false }));
-        }
-      };
-      const isFocusTextPresent = localStorage.getItem("focus") !== null;
-      const editHandler = () =>{
-        setOpen((open) => ({ ...open, focusForm: true }));
-        localStorage.removeItem("focus");
-        
-      }
-    
-      const deleteHandler = () => {
-    
-        setFocusText(obj => ({...obj,text:""}))
-        localStorage.removeItem("focus");
-        setOpen((open) => ({ ...open,  focusForm: true }));
-      };
+  const focusTextHandler = (e) => {
+    if (e.key === "Enter") {
+      console.log("I pressed");
+      localStorage.setItem(
+        "focus",
+        JSON.stringify({ focus: e.target.value, focusState: false })
+      );
+      setOpen((open) => ({ ...open, focusForm: false }));
+    }
+  };
+  const isFocusTextPresent = localStorage.getItem("focus") !== null;
 
-    return (
-        <>
-            {isOpen.focusForm === false || isFocusTextPresent ? (
+  const editHandler = () => {
+    setOpen((open) => ({ ...open, focusForm: true }));
+    localStorage.removeItem("focus");
+  };
+
+  const deleteHandler = () => {
+    setFocusText((obj) => ({ ...obj, text: "" }));
+    localStorage.removeItem("focus");
+    setOpen((open) => ({ ...open, focusForm: true }));
+  };
+
+  return (
+    <>
+      {isOpen.focusForm === false || isFocusTextPresent ? (
         <>
           <p className="font-sm">Main Focus For Today</p>
           <div className="centered font-xs focus_text_wrapper">
@@ -54,15 +55,12 @@ export const GoalToday = ({isOpen,setOpen}) => {
               name="todays-focus"
               id="todays_focus"
               checked={focusText.status}
-              
-              onChange={() =>
-               { setFocusText((focus) => ({
+              onChange={() => {
+                setFocusText((focus) => ({
                   ...focus,
                   status: !focusText.status,
-                }))
-              }
-                
-              }
+                }));
+              }}
             />
             <label htmlFor="todays_focus">
               {focusText.status ? (
@@ -88,12 +86,16 @@ export const GoalToday = ({isOpen,setOpen}) => {
             type="text"
             className="focus_input"
             value={focusText.text}
-            onChange={(e) => setFocusText((focusText) => ({ ...focusText, text: e.target.value }))}
-            onKeyPress={(e)=>focusTextHandler(e)}
-            />
+            onChange={(e) =>
+              setFocusText((focusText) => ({
+                ...focusText,
+                text: e.target.value,
+              }))
+            }
+            onKeyPress={(e) => focusTextHandler(e)}
+          />
         </>
       )}
-       
-        </>
-    )
-}
+    </>
+  );
+};

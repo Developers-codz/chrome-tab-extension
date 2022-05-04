@@ -1,15 +1,12 @@
 import "./style.css";
 import { useState, useEffect } from "react";
 import { SettingIcon, Edit, Delete } from "../../assets/icons";
-import { TodoList, Weather, Quote,Clock ,GoalToday} from "../";
+import { TodoList, Weather, Quote, Clock, GoalToday } from "../";
 import { useTodo } from "../../context/todo-context";
 
-
-
 export const MainTab = () => {
-console.log("parent called")
+
   const { todoDispatch } = useTodo();
-  
 
   const [isOpen, setOpen] = useState({
     settingBtn: false,
@@ -17,29 +14,20 @@ console.log("parent called")
     todo: false,
   });
 
-
-
-
-
- 
-
-
   //  for reset the user
-  
+
   const nameHandler = () => {
     localStorage.removeItem("name");
     window.location.reload();
   };
 
-
   return (
-
     <>
-      <div className="weather-wrapper">
+      <div className="weather_wrapper">
         <Weather />
       </div>
-     <Clock />
-    <GoalToday isOpen={isOpen} setOpen={setOpen} />
+      <Clock />
+      <GoalToday isOpen={isOpen} setOpen={setOpen} />
 
       <div
         className="setting_wrapper"
@@ -60,11 +48,13 @@ console.log("parent called")
       <div className="todo_wrapper">
         <p
           className="font-sm todo_btn_wrapper"
-          onClick={() => setOpen((isOpen) => ({ ...isOpen, todo: !isOpen.todo }))}
-          >
+          onClick={() =>
+            setOpen((isOpen) => ({ ...isOpen, todo: !isOpen.todo }))
+          }
+        >
           Todo
         </p>
-          {isOpen.todo && <TodoList setOpen={setOpen} /> }
+        {isOpen.todo && <TodoList setOpen={setOpen} />}
       </div>
     </>
   );

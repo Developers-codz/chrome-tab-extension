@@ -20,7 +20,7 @@
 .todo-task-wrapper{
  overflow-y: scroll;
  margin:3rem 0 4rem 0;
- max-height:25rem
+ max-height:20rem
 }
 .todo-task-wrapper > ul >li > div>label {
   margin-left:1rem;

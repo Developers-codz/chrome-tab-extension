@@ -10,7 +10,7 @@
   position: absolute;
   bottom: 20px;
 }
-.weather-wrapper{
+.weather_wrapper{
   position:absolute;
   top:10px;
   text-align: center;
@@ -39,7 +39,7 @@ input[type=checkbox] {
 }
 .todo_btn_wrapper,
 .todo_wrapper,
-.weather-wrapper {
+.weather_wrapper {
   right: 20px;
   cursor: pointer;
 }

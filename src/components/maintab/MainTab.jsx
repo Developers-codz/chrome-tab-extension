@@ -1,12 +1,10 @@
 import "./style.css";
-import { useState, useEffect } from "react";
-import { SettingIcon, Edit, Delete } from "../../assets/icons";
+import { useState } from "react";
+import { SettingIcon } from "../../assets/icons";
 import { TodoList, Weather, Quote, Clock, GoalToday } from "../";
 import { useTodo } from "../../context/todo-context";
 
 export const MainTab = () => {
-
-  const { todoDispatch } = useTodo();
 
   const [isOpen, setOpen] = useState({
     settingBtn: false,

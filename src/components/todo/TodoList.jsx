@@ -26,6 +26,7 @@ export const TodoList = ({ setOpen }) => {
   useEffect(() => {
     localStorage.setItem("todo", JSON.stringify(todoState));
   }, [todoState]);
+  
   return (
     <>
       <div className="todo-container">

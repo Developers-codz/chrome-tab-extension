@@ -23,8 +23,9 @@ const TimeProvider = ({children}) => {
 
     if (hours === 0 && minutes === 0 && seconds === 0) {
       localStorage.removeItem("focus");
+      localStorage.removeItem("todo")
     }
-    if (hours === 0) hours = "12";
+    // if (hours === 0) hours = "12";
     if (hours > 0 || hours < 4) greeting = "Night";
     if (hours > 4 || hours < 12) greeting = "Morning";
     if (hours === 12) {

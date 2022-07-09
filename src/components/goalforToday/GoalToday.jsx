@@ -22,7 +22,6 @@ export const GoalToday = ({ isOpen, setOpen }) => {
         JSON.stringify({ ...JSON.parse(localStorage.getItem("focus")), focusState: focusText.status })
       );
     }
-    console.log(focusText)
   }, [focusText.status]);
 
   const focusTextHandler = (e) => {

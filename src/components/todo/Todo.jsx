@@ -10,13 +10,10 @@ const Todo = ({ item }) => {
           name="todo"
           checked={item.completed}
           id={item.todo}
+          onChange={()=>item.completed ? todoDispatch({ type: "TOGGLE_STATUS_FALSE", payload: item.id}) : todoDispatch({ type: "TOGGLE_STATUS_TRUE", payload: item.id})}
           
         />
-        <label htmlFor={item.todo}>{item.completed ? <strike onClick={() =>
-            todoDispatch({ type: "TOGGLE_STATUS_FALSE", payload: item.id})
-          }>{item.todo}</strike>:<span onClick={() =>
-            todoDispatch({ type: "TOGGLE_STATUS_TRUE", payload: item.id})
-          }>{item.todo}</span>}</label>
+        <label htmlFor={item.todo}>{item.completed ? <strike>{item.todo}</strike>:<span>{item.todo}</span>}</label>
       </div>
       <span
         className="remove-btn reset"

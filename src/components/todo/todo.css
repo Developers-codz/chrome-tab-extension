@@ -55,3 +55,10 @@
 ::-webkit-scrollbar {
   width: 10px;
 }
+
+
+@media only screen and (max-width:768px){
+  .todo-container{
+    background-color: var(--color-primary-dark);
+  }
+}

@@ -12,8 +12,7 @@ export const TodoList = ({ setOpen }) => {
   
   const inputHandler = (e) => {
     if (e.keyCode === 13) {
-      console.log("triggred")
-      todoDispatch({ type: "SET_TODO_ITEM", payload: e.target.value });
+      e.target.value !=="" && todoDispatch({ type: "SET_TODO_ITEM", payload: e.target.value });
       e.target.value = "";
       localStorage.setItem("todo", JSON.stringify(todoState));
     }

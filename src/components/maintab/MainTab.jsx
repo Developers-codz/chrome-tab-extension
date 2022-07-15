@@ -19,6 +19,7 @@ export const MainTab = () => {
     window.location.reload();
   };
 
+
   return (
     <>
       <div className="weather_wrapper">
@@ -54,6 +55,7 @@ export const MainTab = () => {
         </p>
         {isOpen.todo && <TodoList setOpen={setOpen} />}
       </div>
+     
     </>
   );
 };

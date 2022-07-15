@@ -41,7 +41,7 @@ export const GoalToday = ({ isOpen, setOpen }) => {
   };
 
   const deleteHandler = () => {
-    setFocusText((obj) => ({ ...obj, text: "" }));
+    setFocusText((obj) => ({ ...obj, text: "",status:false }));
     localStorage.removeItem("focus");
     setOpen((open) => ({ ...open, focusForm: true }));
   };

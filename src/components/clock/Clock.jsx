@@ -3,7 +3,9 @@ import { useTime } from "../../context/time-context";
 export const Clock = () =>{
   
   const userName = localStorage.getItem("name");
-    const { time:{h, m, session, greetings }} = useTime();
+    const { time:{h, m, session, greetings },getTime} = useTime();
+    setTimeout(getTime,1000)
+    setInterval(getTime, 1000*60);
     return (
         <>
         <h1 className="font-xxl">

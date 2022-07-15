@@ -59,10 +59,12 @@ export const Weather = () => {
         <div>Loading .....</div>
       ) : (
         <div className="centered">
+          <div className="centered" onClick={() => setOpen(!weatherDetailOpen)}>
           <img src={`http://openweathermap.org/img/w/${temp.icon}.png`} />
-          <div onClick={() => setOpen(!weatherDetailOpen)}>
-            <div>{Math.round(temp?.currTemp) - 273 + "°"}</div>
+          <div>
+            <div>{Math.round(temp?.currTemp) - 273 + "°" }C</div>
             <div>{temp?.city}</div>
+          </div>
           </div>
           {weatherDetailOpen ? (
             <div className="weather-detail-wrapper">
@@ -72,7 +74,7 @@ export const Weather = () => {
               </div>
               <div className="font-lg temp-centered">
                 <div className="font-lg">
-                  {Math.round(temp?.currTemp) - 273 + "°"}
+                  {Math.round(temp?.currTemp) - 273 + "°"} C
                 </div>
                 <div className="centered font-xxs">
                   <div>Feels Like {Math.round(temp?.feels) - 273 + "°"}</div>

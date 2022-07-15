@@ -1,6 +1,7 @@
 h1 {
   color: var(--default-color);
   font-family: cursive;
+  font-size: 3.5rem;
 }
 .name_input,
 .focus_input {

@@ -16,15 +16,13 @@ export const Quote = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div style={{ textAlign: "center", width: "60vw" }}>
-      <div
-        className="font-xxs"
-        onMouseOver={() => showAuthor(true)}
-        onMouseLeave={() => showAuthor(false)}
-      >
-       <q>{quote.text}</q>
-        
-
+    <div
+      style={{ textAlign: "center", width: "60vw" }}
+      onMouseOver={() => showAuthor(true)}
+      onMouseLeave={() => showAuthor(false)}
+    >
+      <div className="font-xxs">
+        <q>{quote.text}</q>
       </div>
       {author && <div>{quote.author}</div>}
     </div>

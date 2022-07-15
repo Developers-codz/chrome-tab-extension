@@ -15,15 +15,17 @@ export const GoalToday = ({ isOpen, setOpen }) => {
     }
   }, []);
   useEffect(() => {
-    localStorage.setItem(
-      "focus",
-      JSON.stringify({ focus: focusText.text, focusState: focusText.status })
-    );
+    if(JSON.parse(localStorage.getItem("focus") !== null)){
+
+      localStorage.setItem(
+        "focus",
+        JSON.stringify({ ...JSON.parse(localStorage.getItem("focus")), focusState: focusText.status })
+      );
+    }
   }, [focusText.status]);
 
   const focusTextHandler = (e) => {
     if (e.key === "Enter") {
-      console.log("I pressed");
       localStorage.setItem(
         "focus",
         JSON.stringify({ focus: e.target.value, focusState: false })
@@ -39,7 +41,7 @@ export const GoalToday = ({ isOpen, setOpen }) => {
   };
 
   const deleteHandler = () => {
-    setFocusText((obj) => ({ ...obj, text: "" }));
+    setFocusText((obj) => ({ ...obj, text: "",status:false }));
     localStorage.removeItem("focus");
     setOpen((open) => ({ ...open, focusForm: true }));
   };

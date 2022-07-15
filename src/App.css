@@ -7,6 +7,7 @@
   --default-color: white;
   --color-primary: #ff8a8a5d;
   --dark: black;
+  --color-primary-dark:#ff8a8af6;
 }
 body,
 .App {
@@ -46,5 +47,5 @@ body {
   font-size: 1.5rem;
 }
 .font-xxs{
-  font-size:1rem;
+  font-size:1.1rem;
 }

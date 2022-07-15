@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+    "name": "Let's focus",
+    "version": "1.0",
+    "description": "Replace your boring new tab with a soothing wallpaper and other utilities like adding countdown, focus and todos for the day.",
+    "chrome_url_overrides": {
+          "newtab": "index.html"
+      },
+    "browser_action": {
+      "default_icon": "favicon.png",
+      "default_title": "Let's Focus"
+    }
+  }

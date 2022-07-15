@@ -38,20 +38,39 @@
   left: 1rem;
   height:2%;
 }
+.todo-input-wrapper > input:focus {
+  border-bottom: 2px solid var(--default-color);
+}
 .todo_input {
   padding: 0 0.5rem;
   background: transparent;
   border-left: none;
   border-right: none;
   border-top: none;
-  border-bottom: 2px solid var(--default-color);
+  border-bottom: 1.5px solid var(--default-color);
   font-size: 1.3rem;
   color: var(--default-color);
 }
+.todo_input::placeholder{
+  color:var(--default-color)
+}
+
 .todo-lists{
   display: flex;
   justify-content: space-between;
 }
 ::-webkit-scrollbar {
   width: 10px;
+}
+
+
+input[type=checkbox]:checked {
+  accent-color:var(--default-color);
+}
+
+
+@media only screen and (max-width:768px){
+  .todo-container{
+    background-color: var(--color-primary-dark);
+  }
 }

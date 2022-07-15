@@ -10,7 +10,7 @@ h1 {
   border-right: none;
   border-top: none;
   border-bottom: 5px solid var(--default-color);
-  margin: 2rem 0rem;
+  margin: 1.5rem 0rem;
   padding: 1rem 5rem;
   font-size: 3rem;
   color: var(--default-color);

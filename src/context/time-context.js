@@ -34,8 +34,8 @@ const TimeProvider = ({children}) => {
     if (hours > 12) {
       hours = hours - 12;
       s = "PM";
-      if (hours > 1 || hours < 4) greeting = "Afternoon";
-      if (hours > 4 || hours < 8) greeting = "Evening";
+      if (hours > 4 && hours < 8) greeting = "Evening";
+      if (hours > 0 && hours < 4) greeting = "Afternoon";
       if (hours >=8) greeting = "Night";
     }
     setTime((time) => ({

@@ -33,7 +33,6 @@ export const Weather = () => {
         const data = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?lat=${latlong?.lat}&lon=${latlong?.long}&appid=49f0aaf487db4c85dece9408c455c941`
         );
-        console.log(data.data)
         setTemp((temp) => ({
           ...temp,
           currTemp: data.data.main.temp,
